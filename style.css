@@ -85,7 +85,7 @@ picture {
 }
 
 .paragraph {
-  padding-block-end: 17px;
+  margin-block-end: 32px;
 
   font-size: 14px;
   line-height: 1.6;
