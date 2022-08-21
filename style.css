@@ -1,5 +1,9 @@
 :root {
   box-sizing: border-box;
+
+  --desaturated-red: hsl(0, 36%, 70%); /* title, paragraph */
+  --soft-red: hsl(0, 93%, 68%); /* invalid input */
+  --dark-grayish-red: hsl(0, 6%, 24%); /* title */
 }
 
 *,
@@ -13,7 +17,9 @@ body {
   margin: 0;
 
   font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
   line-height: 1.5;
+  color: var(--desaturated-red);
 }
 
 img,
@@ -25,6 +31,16 @@ picture {
 .hero-image {
   width: 100%;
   height: auto;
+}
+
+.title {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.title-dark {
+  font-weight: 600;
+  color: var(--dark-grayish-red);
 }
 
 .attribution {
