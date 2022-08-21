@@ -72,17 +72,17 @@ picture {
   text-align: center;
 }
 
+.title-dark {
+  font-weight: 600;
+  color: var(--dark-grayish-red);
+}
+
 .paragraph {
   padding-inline: 30px;
 
   font-size: 14px;
   line-height: 1.6;
   text-align: center;
-}
-
-.title-dark {
-  font-weight: 600;
-  color: var(--dark-grayish-red);
 }
 
 .attribution {
