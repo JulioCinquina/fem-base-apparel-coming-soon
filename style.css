@@ -110,6 +110,8 @@ picture {
   border-radius: 24px;
 
   font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 .form__input::placeholder {
