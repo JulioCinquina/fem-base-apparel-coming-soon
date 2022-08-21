@@ -40,14 +40,44 @@ picture {
   /* Source: https://www.a11yproject.com/posts/how-to-hide-content/ */
 }
 
+.logo-container {
+  padding-block: 31.5px;
+  padding-inline: 32px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
 .hero-image {
   width: 100%;
   height: auto;
 }
 
+.main {
+  padding-block-start: 64px;
+}
+
 .title {
+  margin-block-start: 0;
+  margin-block-end: 16px;
+  margin-inline: auto;
+
+  font-size: 40px;
   font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: 11px;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.paragraph {
+  padding-inline: 30px;
+
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .title-dark {
