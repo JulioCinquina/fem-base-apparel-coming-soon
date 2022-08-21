@@ -102,6 +102,8 @@ picture {
   padding-inline: 23px;
   width: 100%;
 
+  background-color: transparent;
+
   border: 1px solid hsl(348, 16%, 82%);
   border-radius: 24px;
 
