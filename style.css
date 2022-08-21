@@ -130,6 +130,8 @@ picture {
   height: 100%;
   padding-inline: 32px;
 
+  cursor: pointer;
+
   background-image: url(./images/icon-arrow.svg),
     linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   background-repeat: no-repeat;
