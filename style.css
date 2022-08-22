@@ -141,11 +141,11 @@ picture {
 
   /* prettier-ignore */
   box-shadow: 
-    0 1px 2px rgb(206 151 151 / 0.33),
-    0 2px 4px rgb(206 151 151 / 0.33),
-    0 4px 8px rgb(206 151 151 / 0.33),
-    0 8px 16px rgb(206 151 151 / 0.33),
-    0 16px 32px rgb(206 151 151 / 0.33);
+    0 1px 2px hsla(0, 36%, 70%, 0.33),
+    0 2px 4px hsla(0, 36%, 70%, 0.33),
+    0 4px 8px hsla(0, 36%, 70%, 0.33),
+    0 8px 16px hsla(0, 36%, 70%, 0.33),
+    0 16px 32px hsla(0, 36%, 70%, 0.33);
 }
 
 .attribution {
