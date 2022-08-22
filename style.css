@@ -97,6 +97,11 @@ picture {
 
   /* Leaves a space between the entered text and the button */
   --input-padding-inline-end: 40%;
+
+  /* Positions the error icon based on the size of the input field */
+  --input-error-icon-x-offset: calc(
+    100% - var(--input-padding-inline-end) + 10%
+  );
 }
 
 .form__input-wrapper {
@@ -129,6 +134,13 @@ picture {
 
 .form__input:is(:focus, :focus-visible) {
   outline: 2px solid var(--dark-grayish-red);
+}
+
+.form__input:invalid:not(:focus, :focus-visible) {
+  background-image: url(./images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: var(--input-error-icon-x-offset) 50%;
+  outline: 2px solid var(--soft-red);
 }
 
 .form__button {
@@ -269,7 +281,11 @@ picture {
 
   .form {
     --button-padding-inline: 50px;
-    --input-padding-inline-end: calc(var(--button-padding-inline) * 3);
+
+    /* Positions the error icon based on the size of the input field */
+    --input-error-icon-x-offset: calc(
+      100% - var(--input-padding-inline-end) + 13%
+    );
   }
 
   .form__input {
