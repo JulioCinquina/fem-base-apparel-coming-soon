@@ -195,6 +195,17 @@ picture {
   box-shadow: 0 0 0 4px var(--dark-grayish-red);
 }
 
+.form__error-message {
+  position: absolute;
+  top: 100%;
+  left: var(--input-padding-inline-start);
+
+  margin-block-start: 8px;
+
+  font-size: 13px;
+  color: var(--soft-red);
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
