@@ -133,14 +133,16 @@ picture {
 }
 
 .form__input:is(:focus, :focus-visible) {
-  outline: 2px solid var(--dark-grayish-red);
+  -webkit-appearance: none;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--dark-grayish-red);
 }
 
 .form__input:invalid:not(:focus, :focus-visible) {
   background-image: url(./images/icon-error.svg);
   background-repeat: no-repeat;
   background-position: var(--input-error-icon-x-offset) 50%;
-  outline: 2px solid var(--soft-red);
+  box-shadow: 0 0 0 2px var(--soft-red);
 }
 
 .form__button {
@@ -187,7 +189,8 @@ picture {
 }
 
 .form__button:focus-visible {
-  outline: 4px solid var(--dark-grayish-red);
+  outline: none;
+  box-shadow: 0 0 0 4px var(--dark-grayish-red);
 }
 
 .attribution {
