@@ -94,7 +94,9 @@ picture {
 
 .form {
   --button-padding-inline: 32px;
-  --input-padding-inline-end: calc(var(--button-padding-inline) * 3.4);
+
+  /* Leaves a space between the entered text and the button */
+  --input-padding-inline-end: 40%;
 }
 
 .form__input-wrapper {
