@@ -117,7 +117,7 @@ picture {
 
   font-family: inherit;
   font-size: inherit;
-  color: inherit;
+  color: var(--dark-grayish-red);
 }
 
 .form__input::placeholder {
