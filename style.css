@@ -127,6 +127,10 @@ picture {
   color: var(--desaturated-red);
 }
 
+.form__input:is(:focus, :focus-visible) {
+  outline: 2px solid var(--dark-grayish-red);
+}
+
 .form__button {
   margin: 0;
 
