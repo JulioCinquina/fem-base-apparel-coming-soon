@@ -206,6 +206,42 @@ picture {
   box-shadow: 0 0 0 4px var(--dark-grayish-red);
 }
 
+.form__input--error-animation {
+  animation-name: input-error;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+}
+
+.form__button--error-animation {
+  animation-name: button-error;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes input-error {
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes button-error {
+  25% {
+    transform: translate(-10px, -50%);
+  }
+  75% {
+    transform: translate(10px, -50%);
+  }
+  100% {
+    transform: translate(0px, -50%);
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
