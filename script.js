@@ -16,6 +16,7 @@ buttonElement.addEventListener('click', (event) => {
   const emailIsValid = emailInputElement.checkValidity();
 
   if (!emailIsValid) {
+    clearErrorMessage();
     showErrorMessage();
     event.preventDefault();
   } else {
