@@ -374,6 +374,10 @@ picture {
     font-size: 22px;
   }
 
+  .form__error-message {
+    font-size: 20px;
+  }
+
   .form__button {
     padding-inline: 54px;
   }
