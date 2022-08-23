@@ -1,6 +1,5 @@
 'use strict';
 
-const formElement = document.querySelector('.form');
 const errorMessageElement = document.querySelector('.form__error-message');
 const emailInputElement = document.querySelector('.form__input');
 const buttonElement = document.querySelector('.form__button');
