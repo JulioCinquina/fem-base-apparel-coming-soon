@@ -283,6 +283,11 @@ picture {
     padding-inline: 0;
   }
 
+  .title,
+  .paragraph {
+    text-align: left;
+  }
+
   .title {
     margin-block-end: 18px;
 
@@ -337,11 +342,6 @@ picture {
 
   .main {
     margin-inline-end: 55px;
-  }
-
-  .title,
-  .paragraph {
-    text-align: left;
   }
 }
 
