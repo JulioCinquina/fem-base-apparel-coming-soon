@@ -197,10 +197,9 @@ picture {
 
 .form__error-message {
   position: absolute;
-  top: 100%;
+  top: -50%;
   left: var(--input-padding-inline-start);
-
-  margin-block-start: 8px;
+  transform: translateY(-50%);
 
   font-size: 13px;
   color: var(--soft-red);
