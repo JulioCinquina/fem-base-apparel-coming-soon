@@ -88,7 +88,6 @@ picture {
 
 .paragraph {
   margin-block-end: 32px;
-
   font-size: 14px;
   line-height: 1.6;
   text-align: center;
@@ -96,12 +95,12 @@ picture {
 
 .form {
   --button-padding-inline: 32px;
-
   --input-padding-inline-start: 23px;
   --input-padding-inline-end: calc(var(--button-padding-inline) * 3.5);
-  /* The latter leaves a space between entered text and button + error icon */
+  /* --input-padding-inline-end is the space 
+  between entered text and button + error icon */
 
-  /* Positions the error icon based on input field and button widths */
+  /* Position of the error icon based on input field and button widths */
   --input-error-icon-x-offset: calc(
     100% - (var(--button-padding-inline) * 2.4)
   );
@@ -131,7 +130,6 @@ picture {
   width: 100%;
 
   background-color: transparent;
-
   border: 1px solid hsl(348, 16%, 82%);
   border-radius: 24px;
 
@@ -160,16 +158,13 @@ picture {
 
 .form__button {
   margin: 0;
+  padding-inline: var(--button-padding-inline);
+  height: 100%;
 
   position: absolute;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-
-  height: 100%;
-  padding-inline: var(--button-padding-inline);
-
-  cursor: pointer;
 
   background-image: url(./images/icon-arrow.svg),
     linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
@@ -177,6 +172,8 @@ picture {
   background-position: center;
   border: none;
   border-radius: 24px;
+
+  cursor: pointer;
 
   /* prettier-ignore */
   box-shadow: 
@@ -254,7 +251,6 @@ picture {
 @media screen and (min-width: 1024px) {
   .grid-container {
     height: 100vh;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
@@ -304,18 +300,17 @@ picture {
   }
 
   .main {
+    margin-inline: unset;
+    padding-block: 0;
+    padding-block-end: 30px;
+    padding-inline: 0;
+
+    max-width: 44.4ch;
+
     grid-column: 1;
     grid-row: 2;
     align-self: center;
     justify-self: center;
-
-    max-width: 44.4ch;
-
-    margin-inline: unset;
-
-    padding-block: 0;
-    padding-block-end: 30px;
-    padding-inline: 0;
   }
 
   .title,
@@ -325,7 +320,6 @@ picture {
 
   .title {
     margin-block-end: 18px;
-
     font-size: 64px;
     line-height: 1.1;
     letter-spacing: 17px;
@@ -333,19 +327,17 @@ picture {
 
   .paragraph {
     margin-block-end: 42px;
-
     font-size: 16px;
     line-height: 1.7;
   }
 
   .form {
-    --input-padding-inline-start: 30px;
     --button-padding-inline: 50px;
+    --input-padding-inline-start: 30px;
   }
 
   .form__input {
     padding-block: 18px;
-
     border-radius: 42px;
   }
 
@@ -402,7 +394,6 @@ picture {
   .form__input {
     padding-block: 24px;
     padding-inline-start: 34px;
-
     font-size: 22px;
   }
 
