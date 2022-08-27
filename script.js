@@ -1,5 +1,6 @@
 'use strict';
 
+const formElement = document.querySelector('.form');
 const errorMessageElement = document.querySelector('.form__error-message');
 const emailInputElement = document.querySelector('.form__input');
 const buttonElement = document.querySelector('.form__button');
@@ -28,7 +29,7 @@ const playErrorAnimation = function () {
   );
 };
 
-buttonElement.addEventListener('click', (event) => {
+formElement.addEventListener('submit', (event) => {
   const emailIsValid = emailInputElement.checkValidity();
 
   if (!emailIsValid) {
