@@ -1,22 +1,14 @@
-# Frontend Mentor - Base Apparel coming soon page
+# Frontend Mentor - Base Apparel coming soon page solution
 
-![Design preview for the Base Apparel coming soon page coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Base Apparel coming soon page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+This project features a **responsive layout** made in a **mobile-first workflow** with **Grid** and **media queries**. **JavaScript** is used to validate the form with the **Constraint Validation API**, display an error message and play an error animation.
 
-Thanks for checking out this front-end coding challenge.
+## Overview
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+### The challenge
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
-
-## The challenge
-
-Your challenge is to build out this coming soon page and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
@@ -24,72 +16,84 @@ Your users should be able to:
   - The `input` field is empty
   - The email address is not formatted correctly
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Links
 
-## Where to find everything
+- [Solution on Frontend Mentor]()
+- [Live Site on GitHub Pages]()
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
+### Screenshots
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+|                                Mobile                                 |     |                                 Desktop                                 |
+| :-------------------------------------------------------------------: | :-: | :---------------------------------------------------------------------: |
+| ![Mobile layout of the solution](./screenshots/screenshot-mobile.png) |     | ![Desktop layout of the solution](./screenshots/screenshot-desktop.png) |
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### What I learned
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+In this project, I have practiced the following skills:
 
-## Building your project
+- Using **Grid** and **media queries** to create a **responsive layout**
+- Using **JavaScript** for **client-side form validation** and **DOM manipulation**
+- **Accessibility**: using the `aria-live` and `aria-invalid` attributes
+- Creating **CSS animations**
+- Using **pseudo-elements** for styling purposes
+- Styling elements with **layered box-shadows**
+- Using **semantic HTML markup**
+- Using **CSS relative units** to ensure the page scales according to the user's font size settings
+- Using **CSS custom properties** to allow easy customization and reusability of components
+- Using **Git** and **GitHub**
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+---
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+#### HTML forms, user experience and accessibility
 
-## Deploying your project
+While working on this project, I researched how to make HTML forms that are accessible and that provide a good user experience. I must admit that I was a bit overwhelmed by how many aspects have to be considered, and my form in this solution might not be perfect, but these are some of the things that I learned and tried to implement:
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+1. Every input needs a label, and it is a good practice to give a _visible_ label to every input instead of using placeholder text as a label. However, since the form in this project only has a single field and the short paragraph before it clearly asks for an email address, I considered that a visible label directly above the field was not necessary, but I still included a visually-hidden label for accessibility purposes.
+1. Messages should be displayed above the input field; otherwise, they could be hidden by a form autocompletion dropdown list or an on-screen keyboard.
+1. A field with invalid data is clearly highlighted with a red border and error icon. If the user tries to submit invalid data, an error message is displayed and an error animation is played (unless reduced motion is preferred).
+1. A field with invalid data is only highlighted after it loses focus, and not while the user types. This is done to not interrupt or distract the user while they enter their data.
+1. The input field has an `aria-invalid="true"` attribute for invalid data to be announced to screen reader users.
+1. The error message element has an `aria-live="polite"` attribute for error messages to be announced to screen reader users.
+1. The email input field has an `autocomplete="email"` attribute to ensure its identification by autocompletion features and password managers.
+1. Animations are disabled by a media query if the user prefers reduced motion.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+#### Client-side form validation
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+<table align="center">
+  <tr>
+    <td align="center"><img src="./screenshots/form-validation.gif" alt="invalid email entered in input field, triggering an error animation and message"></td>
+  </tr>
+  <tr>
+    <td align="center">Feedback when trying to submit invalid data: red outline and an error message, icon and animation.</td>
+  </tr>
+</table>
 
-## Create a custom `README.md`
+A field with invalid data is highlighted using the `:invalid` CSS pseudo-class. When submitting the form, the **Constraint Validation API** is used to verify the data. If invalid data is found, the form is not submitted, an error message is displayed to the user and an error animation is played.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+Default field validation is disabled by the `novalidate` attribute. This was done because:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+1. Browser error messages are displayed in the browser's language, which might be different than the language of the page, resulting in an inconsistent experience.
+1. When testing with screen readers, I found that VoiceOver in iOS does not read the error messages of the browser entirely.
+1. Currently, an e-mail address that is missing the domain extension (such as "hi@example") is considered valid, showing no error message.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+Granted, the default error messages are more descriptive than the one implemented here, and the Constraint Validation API also regards an email without the domain extension as valid. However, the mentioned issues can be remediated by implementing a more thorough form validation logic with JavaScript.
 
-## Submitting your solution
+### Continued development
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+In future projects, I want to continue learning how to create forms that are accessible, understandable and easy to use. When it comes to this project, I would like to rewrite its form validation logic to: 1) prevent emails without the domain extension from being regarded as valid, and 2) provide more descriptive error messages.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+### Useful resources
 
-## Sharing your solution
+- [_Client-side form validation_, MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - This is a comprehensive guide about client-side form validation, and it covers both built-in form validation (with HTML) and JavaScript form validation (with and without the Constraint Validation API).
+- [_Form design: best practice, research insights and examples_, Geri Reid](https://gerireid.com/forms.html) - A set of guidelines for designing forms with accessibility and user experience in mind.
+- [_Creating Accessible Forms: Accessible Form Controls_, WebAIM](https://webaim.org/techniques/forms/controls) - This article contains several examples of accessible form controls.
+- [_Avoid Messages Under Fields_, Adrian Roselli](https://adrianroselli.com/2017/01/avoid-messages-under-fields.html) - In this post, Adrian Roselli shows how placing messages under form fields can be problematic.
+- [_Avoid Default Field Validation_, Adrian Roselli](https://adrianroselli.com/2019/02/avoid-default-field-validation.html) - In this post, Adrian Roselli shows how the default field validation — in its current state — can present accessibility issues.
+- [_More accessible markup with display: contents_, Hidde de Vries](https://hidde.blog/more-accessible-markup-with-display-contents/) - This article shows how to use `display: contents` in CSS to turn the contents of an element inside a grid container into grid items, which I found very useful in this project.
+- [_A powerful CSS display property that no one talks about_, Kevin Powell](https://www.youtube.com/watch?v=cs37yx73b1o) - This video by Kevin Powell also shows how `display: contents` work, how it can be used and its limitations.
 
-There are multiple places you can share your solution:
+## Author
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack).
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- Frontend Mentor - [@JulioCinquina](https://www.frontendmentor.io/profile/JulioCinquina)
