@@ -18,8 +18,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution on Frontend Mentor]()
-- [Live Site on GitHub Pages]()
+- [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/form-validation-with-constraint-validation-api-css-error-animation-Czkq91CVxn)
+- [Live Site on GitHub Pages](https://juliocinquina.github.io/fem-base-apparel-coming-soon/)
 
 ### Screenshots
 
