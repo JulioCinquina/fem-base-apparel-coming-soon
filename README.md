@@ -96,4 +96,5 @@ In future projects, I want to continue learning how to create forms that are acc
 
 ## Author
 
+- Twitter - [@JulioCinquina](https://twitter.com/JulioCinquina)
 - Frontend Mentor - [@JulioCinquina](https://www.frontendmentor.io/profile/JulioCinquina)
