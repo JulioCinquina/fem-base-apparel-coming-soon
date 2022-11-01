@@ -29,10 +29,23 @@ const playErrorAnimation = function () {
   );
 };
 
+const checkEmailTLD = function (email) {
+  // Receives a string containing an email address and returns true or false
+  // based on the presence of a top-level domain after the @.
+  // It's a simple check: it checks if there is at least one character
+  // after the @, followed by a dot with at least two characters after it.
+  // This is required because the Constraint Validation API regards dotless
+  // domains as valid (and they are in some cases, but not for the purposes
+  // of this project).
+  const TLDRegExp = new RegExp('@.+?\\..{2,}');
+  return TLDRegExp.test(email);
+};
+
 formElement.addEventListener('submit', (event) => {
   const emailIsValid = emailInputElement.checkValidity();
+  const emailHasTLD = checkEmailTLD(emailInputElement.value);
 
-  if (!emailIsValid) {
+  if (!emailIsValid || !emailHasTLD) {
     clearErrorMessage();
     showErrorMessage();
     playErrorAnimation();
