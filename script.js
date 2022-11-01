@@ -36,8 +36,11 @@ formElement.addEventListener('submit', (event) => {
     clearErrorMessage();
     showErrorMessage();
     playErrorAnimation();
+    emailInputElement.setAttribute('aria-invalid', '');
+    emailInputElement.focus();
     event.preventDefault();
   } else {
     clearErrorMessage();
+    emailInputElement.removeAttribute('aria-invalid');
   }
 });

@@ -65,7 +65,11 @@
         <form class="form" novalidate>
           <label for="email" class="visually-hidden">Email Address</label>
           <div class="form__input-wrapper">
-            <p class="form__error-message" aria-live="polite"></p>
+            <p
+              class="form__error-message"
+              id="form-error-message"
+              aria-live="polite"
+            ></p>
             <input
               class="form__input"
               type="email"
@@ -73,8 +77,8 @@
               id="email"
               placeholder="Email Address"
               required
-              aria-invalid="true"
               autocomplete="email"
+              aria-describedby="form-error-message"
             />
             <button class="form__button" aria-label="submit"></button>
           </div>
