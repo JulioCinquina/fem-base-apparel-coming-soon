@@ -54,8 +54,8 @@ While working on this project, I researched how to make HTML forms that are acce
 1. Messages should be displayed above the input field; otherwise, they could be hidden by a form autocompletion dropdown list or an on-screen keyboard.
 1. A field with invalid data is clearly highlighted with a red border and error icon. If the user tries to submit invalid data, an error message is displayed and an error animation is played (unless reduced motion is preferred).
 1. A field with invalid data is only highlighted after it loses focus, and not while the user types. This is done to not interrupt or distract the user while they enter their data.
-1. The input field has an `aria-invalid="true"` attribute for invalid data to be announced to screen reader users.
-1. The error message element has an `aria-live="polite"` attribute for error messages to be announced to screen reader users.
+1. If the input field has invalid data when the form is submitted, it receives the `aria-invalid` attribute, and `aria-describedby` ensures that it is described by the error message that is shown.
+1. The error message element has an `aria-live="polite"` attribute, which ensures that error messages are announced to screen reader users.
 1. The email input field has an `autocomplete="email"` attribute to ensure its identification by autocompletion features and password managers.
 1. Animations are disabled by a media query if the user prefers reduced motion.
 
@@ -70,23 +70,25 @@ While working on this project, I researched how to make HTML forms that are acce
   </tr>
 </table>
 
-A field with invalid data is highlighted using the `:invalid` CSS pseudo-class. When submitting the form, the **Constraint Validation API** is used to verify the data. If invalid data is found, the form is not submitted, an error message is displayed to the user and an error animation is played.
+A field with invalid data is highlighted using the `:invalid` CSS pseudo-class. When submitting the form, the **Constraint Validation API** is used to verify the data. Since it allows emails with _dotless_ domains (which are valid in some contexts, but not for the purposes of this project), the `checkEmailTLD()` function checks if the email address has a top-level domain, returning a Boolean. If invalid data is found, the form is not submitted, an error message is displayed to the user and an error animation is played.
 
 Default field validation is disabled by the `novalidate` attribute. This was done because:
 
 1. Browser error messages are displayed in the browser's language, which might be different than the language of the page, resulting in an inconsistent experience.
 1. When testing with screen readers, I found that VoiceOver in iOS does not read the error messages of the browser entirely.
-1. Currently, an e-mail address that is missing the domain extension (such as "hi@example") is considered valid, showing no error message.
 
-Granted, the default error messages are more descriptive than the one implemented here, and the Constraint Validation API also regards an email without the domain extension as valid. However, the mentioned issues can be remediated by implementing a more thorough form validation logic with JavaScript.
+Granted, the default error messages are more descriptive than the one implemented here, but that can be remediated by implementing a more thorough form validation logic with JavaScript.
 
 ### Continued development
 
-In future projects, I want to continue learning how to create forms that are accessible, understandable and easy to use. When it comes to this project, I would like to rewrite its form validation logic to: 1) prevent emails without the domain extension from being regarded as valid, and 2) provide more descriptive error messages.
+In future projects, I want to continue learning how to create forms that are accessible, understandable and easy to use. When it comes to this project, I would like to rewrite its form validation logic to provide more descriptive error messages.
+
+**UPDATE**: The first version of this project allowed email addresses with _dotless_ domains. I have updated the code to check for the presence of a top-level domain in the email address.
 
 ### Useful resources
 
 - [_Client-side form validation_, MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - This is a comprehensive guide about client-side form validation, and it covers both built-in form validation (with HTML) and JavaScript form validation (with and without the Constraint Validation API).
+- [_Your E-Mail Validation Logic is Wrong_, Jan Schaumann](https://www.netmeister.org/blog/email.html#dotless) - This article shows that validating email addresses is not exactly simple, since technical specifications allow a variety of address formats, including addresses with _dotless_ domains, e.g., a local domain with no top-level domain.
 - [_Form design: best practice, research insights and examples_, Geri Reid](https://gerireid.com/forms.html) - A set of guidelines for designing forms with accessibility and user experience in mind.
 - [_Creating Accessible Forms: Accessible Form Controls_, WebAIM](https://webaim.org/techniques/forms/controls) - This article contains several examples of accessible form controls.
 - [_Avoid Messages Under Fields_, Adrian Roselli](https://adrianroselli.com/2017/01/avoid-messages-under-fields.html) - In this post, Adrian Roselli shows how placing messages under form fields can be problematic.
