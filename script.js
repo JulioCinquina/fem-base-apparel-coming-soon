@@ -45,15 +45,15 @@ formElement.addEventListener('submit', (event) => {
   const emailIsValid = emailInputElement.checkValidity();
   const emailHasTLD = checkEmailTLD(emailInputElement.value);
 
-  if (!emailIsValid || !emailHasTLD) {
+  if (emailIsValid && emailHasTLD) {
+    clearErrorMessage();
+    emailInputElement.removeAttribute('aria-invalid');
+  } else {
     clearErrorMessage();
     showErrorMessage();
     playErrorAnimation();
     emailInputElement.setAttribute('aria-invalid', '');
     emailInputElement.focus();
     event.preventDefault();
-  } else {
-    clearErrorMessage();
-    emailInputElement.removeAttribute('aria-invalid');
   }
 });
